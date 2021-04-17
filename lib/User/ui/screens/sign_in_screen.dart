@@ -17,7 +17,7 @@ class _SignInScreen extends State<SignInScreen>{
     return signGoogleUI();
   }
 
-  String title = "Welcome \n This is your Travel App";
+  String title = "Bienvenido \n esta es tu App de Viajes";
 
   Widget signGoogleUI(){
     return Scaffold(
