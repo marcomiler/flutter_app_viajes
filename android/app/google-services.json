@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "233070716448",
-    "project_id": "app-viajes-78d15",
-    "storage_bucket": "app-viajes-78d15.appspot.com"
+    "project_number": "309581264267",
+    "project_id": "app-viajes-a256d",
+    "storage_bucket": "app-viajes-a256d.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:233070716448:android:8eb5a7c95e6f9c53e27e45",
+        "mobilesdk_app_id": "1:309581264267:android:f3406e8183952ae383ab8e",
         "android_client_info": {
           "package_name": "com.example.app_viajes"
         }
       },
       "oauth_client": [
         {
-          "client_id": "233070716448-r0uu02l0s6iol444ggea03drf0qfhguk.apps.googleusercontent.com",
+          "client_id": "309581264267-iukl0uktp8p3q0rrgs9md358pcsunduo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.app_viajes",
+            "certificate_hash": "c5719ae1acdbe66ce572bf9e3e35a93f7d5eb26c"
+          }
+        },
+        {
+          "client_id": "309581264267-8vp8qlcouvvrutk7d3p3ttptibolhlnh.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBYzcIj7Ik3yyZqS7IRR3j_-P6p_yCT3VM"
+          "current_key": "AIzaSyA4nGuRoH0WdWQ38HgZOiK7AJMixwABnm0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "233070716448-r0uu02l0s6iol444ggea03drf0qfhguk.apps.googleusercontent.com",
+              "client_id": "309581264267-8vp8qlcouvvrutk7d3p3ttptibolhlnh.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
