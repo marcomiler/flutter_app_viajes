@@ -1,3 +1,4 @@
+import 'package:app_viajes/User/ui/widgets/button_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:app_viajes/User/ui/widgets/user_info.dart';
 
@@ -29,7 +30,7 @@ class ProfileHeader extends StatelessWidget {
             ],
           ),
           UserInfo('assets/img/ann.jpg', 'Anahí Salgado','anahi@platzi.com'),
-          BackButton()
+          ButtonsBar()
         ],
       ),
     );

@@ -15,11 +15,14 @@ class UserBloc implements Bloc {
   //Casos de uso
   //1. SignIn a la aplicacion con Google
   Future<User> signIn() {
-
     return _auth_repository.signInFirebase();
-
   }
 
+  //2. SignOut
+  signOut() {
+    _auth_repository.signOut();
+  }
+ 
   @override
   void dispose() {
    
