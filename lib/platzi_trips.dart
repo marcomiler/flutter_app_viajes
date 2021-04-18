@@ -17,10 +17,16 @@ class PlatziTrips extends StatefulWidget {
 
 class _PlatziTrips extends State<PlatziTrips> {
   int indexTap = 0;
+  UserBloc _userBloc;
+
   final List<Widget> widgetsChildren = [
     HomeTrips(),
     SearchTrips(),
-    ProfileTrips()
+    BlocProvider<UserBloc>(
+      child: ProfileTrips(),
+      bloc: UserBloc(),
+    )
+
   ];
   
 
