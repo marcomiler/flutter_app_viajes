@@ -2,12 +2,20 @@ import 'dart:async';
 
 import 'package:app_viajes/User/bloc/bloc_user.dart';
 import 'package:app_viajes/User/ui/screens/sign_in_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
-import 'platzi_trips.dart';
 //import 'platzi_trips_cupertino.dart';
 
-void main() => runApp(MyApp());
+void main() async {
+
+  // estas dos lineas se colocan luego de haber instalado el firebase_core en el .yaml
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
+
+} 
+  
 
 class MyApp extends StatelessWidget {
 

@@ -1,6 +1,5 @@
 import 'package:app_viajes/Place/ui/screens/home_trips.dart';
 import 'package:flutter/material.dart';
-import 'package:app_viajes/Place/ui/screens/home_trips.dart';
 import 'package:app_viajes/Place/ui/screens/search_trips.dart';
 import 'package:app_viajes/User/ui/screens/profile_trips.dart';
 
