@@ -1,6 +1,8 @@
+import 'package:app_viajes/User/repository/cloud_firestore_repository.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:app_viajes/User/repository/auth_repository.dart';
+import 'package:app_viajes/User/model/user.dart' as u;
 
 class UserBloc implements Bloc {
 
@@ -18,10 +20,16 @@ class UserBloc implements Bloc {
     return _auth_repository.signInFirebase();
   }
 
-  //2. SignOut
+  //2. Registrar usuario en BD
+  final cfRepo = CloudFirestoreRepository();
+  void updateUserData(u.User user) => cfRepo.updateUserDataFirestore(user);
+  
+  // SignOut
   signOut() {
     _auth_repository.signOut();
   }
+
+  //
  
   @override
   void dispose() {

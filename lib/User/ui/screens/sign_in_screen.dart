@@ -1,4 +1,5 @@
 import 'package:app_viajes/User/bloc/bloc_user.dart';
+import 'package:app_viajes/User/model/user.dart' as u;
 import 'package:app_viajes/platzi_trips.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -62,7 +63,14 @@ class _SignInScreen extends State<SignInScreen>{
                  text: "Login with Gmail",
                  onPressed: (){
                    _userBloc.signIn()
-                   .then((User user) => print("El usuario es: "+user.displayName));
+                   .then((User user) {
+                     _userBloc.updateUserData(u.User(
+                       userId: user.uid,
+                       name: user.displayName,
+                       email: user.email,
+                       photoURL: user.photoURL,
+                     ));
+                   });
                  },
                  height: 50.0,
                  width: 300.0,
