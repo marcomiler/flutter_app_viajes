@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:app_viajes/Place/ui/screens/add_place_screen.dart';
 import 'package:app_viajes/User/bloc/bloc_user.dart';
 import 'package:flutter/material.dart';
 import 'package:app_viajes/User/ui/widgets/circle_button.dart';
@@ -22,7 +25,11 @@ class ButtonsBar extends StatelessWidget {
             () => {}),
             //Añadir un nuevo lugar
             CircleButton(false, Icons.add, 40.0, Color.fromRGBO(255, 255, 255, 1), 
-            () => {}),
+            () {
+
+              File image;
+              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => AddPlaceScreen(image: image)));
+            }),
             //Cerrar Sesión
             CircleButton(true, Icons.exit_to_app, 20.0, Color.fromRGBO(255, 255, 255, 0.6),
             () => {
