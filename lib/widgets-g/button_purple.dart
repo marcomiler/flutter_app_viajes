@@ -16,9 +16,7 @@ class ButtonPurple extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return InkWell(
-      onTap: () {
-        onPressed;
-      },
+      onTap: onPressed,
       child: Container(
         margin: EdgeInsets.only(
             top: 30.0,

@@ -1,11 +1,14 @@
 import 'dart:io';
+import 'package:app_viajes/Place/model/place.dart';
 import 'package:app_viajes/Place/ui/widgets/card_image.dart';
 import 'package:app_viajes/Place/ui/widgets/title_input_location.dart';
+import 'package:app_viajes/User/bloc/bloc_user.dart';
 import 'package:app_viajes/widgets-g/button_purple.dart';
 import 'package:app_viajes/widgets-g/gradient_back.dart';
 import 'package:app_viajes/widgets-g/text_input.dart';
 import 'package:app_viajes/widgets-g/title_header.dart';
 import 'package:flutter/material.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 
 class AddPlaceScreen extends StatefulWidget {
 
@@ -21,11 +24,15 @@ class AddPlaceScreen extends StatefulWidget {
 
 class _AddPlaceScreen extends State<AddPlaceScreen>{
 
+  final _controllerTitlePlace = TextEditingController();
+  final _controllerDescriptionPlace = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
 
-    final _controllerTitlePlace = TextEditingController();
-    final _controllerDescriptionPlace = TextEditingController();
+    UserBloc userBloc = BlocProvider.of<UserBloc>(context);
+    // final _controllerTitlePlace = TextEditingController();
+    // final _controllerDescriptionPlace = TextEditingController();
     
     return Scaffold(
       body: Stack(
@@ -40,9 +47,7 @@ class _AddPlaceScreen extends State<AddPlaceScreen>{
                   width: 45.0,
                   child: IconButton(
                     icon: Icon(Icons.keyboard_arrow_left, color: Colors.white, size: 45),
-                    onPressed: () => {
-                      Navigator.pop(context)
-                    },
+                    onPressed: () => Navigator.pop(context)
                   ),
                 )
               ),
@@ -98,10 +103,19 @@ class _AddPlaceScreen extends State<AddPlaceScreen>{
                     buttonText: "Add Place",
                     onPressed: () {
                       //Firebase Storage
-                      ////url
-                      ///Cloud Firestore
-                      ///Place - title, description, url, userOwner, likes
-                    })
+                      //url
+                      //Cloud Firestore
+                      //Place - title, description, url, userOwner, likes
+                      userBloc.updatePlaceData(Place(
+                        name: _controllerTitlePlace.text,
+                        description: _controllerDescriptionPlace.text,
+                        likes: 0
+                      )).whenComplete(() {
+                        print("Terminó");
+                        Navigator.pop(context);
+                      });
+                    }
+                  )
                 )
               ]
             )
